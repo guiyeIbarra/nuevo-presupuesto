@@ -1,0 +1,263 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px; 
+    font-weight: 500;
+    background-color: rgb(160, 220, 220); 
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    margin-top: 20px;
+    background-color: rgba(103, 103, 237, 0.945);
+    width: 100%;
+}
+
+main {
+    margin: 0px;
+    background-color: rgb(101, 211, 212);
+    height: auto;
+}
+
+.titulo {
+    margin-top: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(40, 40, 254); 
+    text-align: center;
+}
+
+#fecha {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+h4 {
+    font-style: italic;
+    text-align: center;
+}
+
+.col {
+    text-align: center;
+}
+
+#contacto {
+    text-align: center;
+    margin-left: 60px;
+}
+
+.obs {
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: none;
+}
+
+.motoAuto {
+    display: flex;
+    justify-content: space-evenly;  
+    padding: 35px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 6px;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+}
+
+input[id='observaciones'] {
+    text-transform: none;
+}
+
+.table th {
+    text-align: center; 
+}
+
+.table input[type="number"] {
+    text-align: end;
+    width: 100px;
+    background-color: rgb(160, 220, 220);
+    height: 30px;
+}
+
+.fieldset {
+    width: 300px;
+    margin: 60px; 
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.total {
+    font-size: 12px;
+    width: 50px; 
+    margin-left: 40%; 
+    margin-top: 5%;
+    border-radius: 6px; 
+    color: black;
+    cursor: pointer;
+}
+
+.total:hover {
+    background-color: rgb(36, 51, 221);
+    color: rgb(15, 15, 15);
+}
+
+#total {
+    font-size: 20px;
+    color: red;
+}
+
+.boton {
+    font-size: 15px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgb(131, 131, 239);
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: blue;
+}
+
+footer {
+    background-color: rgb(160, 220, 220);
+    height: 50px;
+}
+
+.marca {
+    position: absolute;
+    left: 330px;
+    font-size: 13px;
+    margin-top: 7%;
+}
+
+@media (min-width: 700px) {
+    #contacto {
+        padding: 15px;
+        display: grid; 
+        justify-items: end;
+        align-items: center;
+        text-align: center;
+        margin-left: 45%;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"] {
+        text-transform: uppercase;
+        margin: 10px;
+        width: 430px;
+        text-align: center;
+    }
+    .obs {
+        text-transform: none;
+        margin: 10px;
+        width: 430px;
+        text-align: center;
+    }
+    .table th {
+        font-size: 20px;
+        align-items: center;
+        height: 50%;    
+    }
+    .table input[type="number"] {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    .fieldset {
+        width: 200px;
+        margin-left: 190px; 
+    }
+    .total{
+        margin-left: 256px;
+        margin-top: 5%;
+    }
+    .marca {
+        margin-left: 330px;
+    }
+}
+
+@media (min-width: 1100px) {
+    header {
+        height: 5px;
+    }
+    .titulo {
+        text-align: left;
+        margin-left: 160px;
+        position: absolute;
+        margin-top: 8%;
+        letter-spacing: 5px;
+    }
+    .fecha {
+        position: absolute;
+        margin-top: 4%;
+        margin-left: 310px;
+    }
+    h4 {
+        position: absolute;
+        margin-left: 190px;
+    }
+    #contacto {
+        display: grid;
+        align-items: center;
+        justify-items: end;
+        position: absolute;
+        margin-top: 200px;
+        width: 500px;
+        margin-left: 7%;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"] {
+        text-transform: uppercase;
+        margin: 25px;
+        width: 400px;
+    }
+    .obs {
+        text-transform: none;
+        margin: 25px;
+        width: 400px;
+    }
+    .table input[type="number"]{
+        margin: 5px;
+        padding: 8px;
+        width: 150px;
+    }
+    .motoAuto {
+        margin-left: 20%;
+    }
+    .table {
+        display: flex;
+        margin-left: 58%;
+    }
+    .fieldset {
+        width: 400px;
+        margin-left: 590px;
+        margin-top: 45px; 
+    }
+    .total{
+        margin-left: 35%;
+    }
+    .boton {
+        margin-left: 600px;
+    }
+    .marca {
+        font-size: 14px;
+        margin-left: 20%;
+    }
+}

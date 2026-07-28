@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - Gestoría</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./dist/css/bootstrap.css">
+</head>
+<body>
+    <header>
+        <h1 class="titulo">PRESUPUESTO</h1>
+        <div>
+            <span class="fecha">
+              <p id="fecha"></p>
+            </span> 
+        </div>
+    </header>
+
+    <main>
+        <h4 id="gestoria">GESTORIA Guille Ibarra</h4>
+        
+        <div class="row">
+            <div class="col-6">                   
+                <div id="contacto">
+                    <label for="jurisdiccion">Jurisdicción Sellado
+                      <select id="jurisdiccion" name="jurisdiccion" class="contacto"> 
+                        <option value="BsAs">Buenos Aires</option>
+                        <option value="Catamarca">Catamarca</option>
+                        <option value="Chaco">Chaco</option>
+                        <option value="Chubut">Chubut</option>
+                        <option value="CABA">CABA</option>
+                        <option value="Cordoba">Cordoba</option>
+                        <option value="Corrientes">Corrientes</option>
+                        <option value="EntreRios">Entre Ríos</option>
+                        <option value="Formosa">Formosa</option>
+                        <option value="Jujuy">Jujuy</option>
+                        <option value="LaPampa">La Pampa</option>
+                        <option value="LaRioja">La Rioja</option>
+                        <option value="Mendoza">Mendoza</option>
+                        <option value="Misiones">Misiones</option>
+                        <option value="Neuquen">Neuquén</option>
+                        <option value="RioNegro">Río Negro</option>
+                        <option value="Salta">Salta</option>
+                        <option value="SanJuan">San Juan</option>
+                        <option value="SanLuis">San Luis</option>
+                        <option value="SantaCruz">Santa Cruz</option>
+                        <option value="SantaFe">Santa Fe</option>
+                        <option value="SantiagoDelEstero">Santiago del Estero</option>
+                        <option value="TierraDelFuego">Tierra del Fuego</option>
+                        <option value="Tucuman">Tucumán</option>
+                      </select>
+                    </label>
+
+                    <label for="cliente">Cliente<input type="text" id="cliente" name="cliente" class="contacto" autofocus></label>
+                    <label for="telefono">Teléfono<input type="tel" id="telefono" name="telefono" class="contacto"></label>
+                    <label for="dominio">Dominio<input type="text" id="dominio" name="dominio" class="contacto"></label>
+                    <label for="marca">Marca<input type="text" id="marca" name="marca" class="contacto"></label>
+                    <label for="modelo">Modelo<input type="text" id="modelo" name="modelo" class="contacto"></label>
+                    <label for="año">Año<input type="number" id="año" name="año" class="contacto"></label>
+                    <label for="tipo">Tipo<input type="text" id="tipo" name="tipo" class="contacto"></label>
+                    <label for="valorAcara">Valor ACARA<input type="text" id="valorAcara" name="valorAcara" class="contacto"></label>
+                    <label for="valorRegistro">Valor Registro<input type="number" id="valorRegistro" name="valorRegistro" class="contacto"></label>
+                    <label for="registro">Registro<input type="text" id="registro" name="registro" class="contacto"></label>
+                    <label for="observaciones">Observaciones
+                      <span>
+                        <textarea id="observaciones" name="observaciones" class="contacto obs" rows="3"></textarea>
+                      </span>
+                    </label>
+                </div>                
+            </div>  
+
+            <div class="motoAuto">
+                <span class="check">
+                   <label for="moto" style="font-size: 20px"><input type="radio" id="moto" name="option" onclick="motoAuto()"> Moto</label>
+                   <label for="auto" style="font-size: 20px"><input type="radio" id="auto" name="option" onclick="autoMoto()"> Auto</label>
+                </span>   
+            </div>
+          
+            <div class="col">
+                <fieldset class="fieldset">
+                    <table class="table">
+                      <tbody>
+                          <tr><th>Arancel</th><td><input type="number" id="arancel" value="0"></td></tr>
+                          <tr><th>Sellado</th><td><input type="number" id="sellado" value="0"></td></tr>
+                          <tr><th>Cédula</th><td><input type="number" id="cedula" value="0"></td></tr>
+                          <tr><th>Título</th><td><input type="number" id="titulo" value="0"></td></tr>
+                          <tr><th>SUGIT</th><td><input type="number" id="sugit" value="0"></td></tr>
+                          <tr><th>Municipio</th><td><input type="number" id="muni" value="0"></td></tr>
+                          <tr><th>02</th><td><input type="number" id="ceroDos" value="0"></td></tr>
+                          <tr><th>04</th><td><input type="number" id="ceroCuatro" value="0"></td></tr>
+                          <tr><th>31</th><td><input type="number" id="31" value="0"></td></tr>
+                          <tr><th>12</th><td><input type="number" id="12" value="0"></td></tr>
+                          <tr><th>08</th><td><input type="number" id="08" value="0"></td></tr>
+                          <tr><th>59</th><td><input type="number" id="59" value="8000"></td></tr>
+                          <tr><th>13 x 2</th><td><input type="number" id="13s" value="0"></td></tr>
+                          <tr><th>Radicacion</th><td><input type="number" id="radic" value="0"></td></tr>
+                          <tr><th>Mora 08</th><td><input type="number" id="mora" value="0"></td></tr>
+                          <tr><th>Rehabilitacion</th><td><input type="number" id="rehab" value="0"></td></tr>
+                          <tr><th>DDJJ</th><td><input type="number" id="ddjj" value="0"></td></tr>
+                          <tr><th>Varios</th><td><input type="number" id="varios" value="0"></td></tr>
+                          <tr><th>Honorarios</th><td><input type="number" id="h" value="0"></td></tr>
+                          <tr><th>Honorarios Colega</th><td><input type="number" id="hColega" value="0"></td></tr>
+                          <tr><th>Envío</th><td><input type="number" id="envio" value="0"></td></tr>
+                          <tr><th>Legalización</th><td><input type="number" id="legalizacion" value="0"></td></tr>
+                          <tr>
+                            <th style="color: red; font-size: 20px;">TOTAL<p class="total" onclick="sumar()">pulsar</p></th>
+                            <td><input type="number" id="total" readonly></td>
+                          </tr>
+                      </tbody>
+                    </table>
+                </fieldset>
+                <br>
+                <button class="boton" type="button" id="boton" onclick="genPDF()">Descargar PDF</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+      <p class="marca">guiyeIbarra@</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
