@@ -5,6 +5,32 @@ document.addEventListener("DOMContentLoaded", function() {
   fechaElemento.textContent = fecha.toLocaleDateString();
 });
 
+
+
+
+// Cambiar de tema y guardarlo en el navegador
+function cambiarTema() {
+  let selectTema = document.getElementById("temaSelect").value;
+  document.body.className = selectTema; // Cambia la clase del body (moderno, oscuro o clasico)
+  localStorage.setItem("temaGestoria", selectTema); // Lo guarda en la memoria
+}
+
+// Cargar el tema guardado al iniciar la página
+document.addEventListener("DOMContentLoaded", function() {
+  let temaGuardado = localStorage.getItem("temaGestoria") || "moderno"; // Por defecto arranca en moderno
+  document.body.className = temaGuardado;
+  
+  let selectTema = document.getElementById("temaSelect");
+  if (selectTema) {
+    selectTema.value = temaGuardado;
+  }
+});
+
+
+
+
+
+
 // Cambio de jurisdicción
 let pcia = document.getElementById("jurisdiccion");
 let porcentaje = document.getElementById("sellado");
@@ -17,16 +43,50 @@ pcia.addEventListener("change", function() {
   }
 });
 
-// Cálculo para Moto
+// Definimos los porcentajes de sellado para cada jurisdicción
+const porcentajesSellado = {
+  "BsAs": 0.03,
+  "Catamarca": 0.03,
+  "Chaco": 0.03,
+  "Chubut": 0.03,
+  "CABA": 0.015, // Ejemplo 1.5%
+  "Cordoba": 0.015, // Ejemplo 1.5%
+  "Corrientes": 0.01,
+  "EntreRios": 0.03,
+  "Formosa": 0.03,
+  "Jujuy": 0.03,
+  "LaPampa": 0.03,
+  "LaRioja": 0.03,
+  "Mendoza": 0.03,
+  "Misiones": 0.03,
+  "Neuquen": 0.03,
+  "RioNegro": 0.03,
+  "Salta": 0.03,
+  "SanJuan": 0.03,
+  "SanLuis": 0.03,
+  "SantaCruz": 0.03,
+  "SantaFe": 0.03,
+  "SantiagoDelEstero": 0.03,
+  "TierraDelFuego": 0.03,
+  "Tucuman": 0.03
+};
+
 function motoAuto() {
-  let arancelMoto = document.getElementById('valorRegistro').value;
-  let selladoMoto = document.getElementById('valorAcara').value;
+  let arancelMoto = parseFloat(document.getElementById('valorRegistro').value) || 0;
+  let selladoMoto = parseFloat(document.getElementById('valorAcara').value) || 0;
   let honoMoto = document.getElementById('h');
+  
+  // 1. Obtenemos la provincia seleccionada en el <select>
+  let pciaSeleccionada = document.getElementById('jurisdiccion').value;
+
+  // 2. Buscamos su porcentaje en el objeto (si no existe ninguna, toma 0.03 por defecto)
+  let tasaSellado = porcentajesSellado[pciaSeleccionada] || 0.03;
 
   let totalMoto = arancelMoto * 0.01;
-  let totalSelladoMoto = selladoMoto * 0.03;
+  let totalSelladoMoto = selladoMoto * tasaSellado;
   
   sellado.value = Math.floor(totalSelladoMoto + 1000);
+  
   if(totalMoto > 6000) {
     arancel.value = Math.floor(totalMoto);
     honoMoto.value = 60000;
@@ -36,16 +96,22 @@ function motoAuto() {
   }
 }
 
-// Cálculo para Auto
 function autoMoto() {
-  let arancelAuto = document.getElementById('valorRegistro').value;
-  let selladoAuto = document.getElementById('valorAcara').value;
+  let arancelAuto = parseFloat(document.getElementById('valorRegistro').value) || 0;
+  let selladoAuto = parseFloat(document.getElementById('valorAcara').value) || 0;
   let honoAuto = document.getElementById('h');
+  
+  // 1. Obtenemos la provincia seleccionada
+  let pciaSeleccionada = document.getElementById('jurisdiccion').value;
+
+  // 2. Buscamos su porcentaje en el objeto
+  let tasaSellado = porcentajesSellado[pciaSeleccionada] || 0.03;
 
   let totalAuto = arancelAuto * 0.01;
-  let totalSelladoAuto = selladoAuto * 0.03;
+  let totalSelladoAuto = selladoAuto * tasaSellado;
   
   sellado.value = Math.floor(totalSelladoAuto + 1000);
+  
   if(totalAuto > 13100) {
     arancel.value = Math.floor(totalAuto);
     honoAuto.value = 90000;
@@ -54,6 +120,7 @@ function autoMoto() {
     honoAuto.value = 80000;
   }
 }
+
 
 // Función auxiliar reutilizable para obtener todos los valores numéricos
 function obtenerValoresPresupuesto() {

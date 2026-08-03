@@ -10,6 +10,23 @@
 <body>
     <header>
         <h1 class="titulo">PRESUPUESTO</h1>
+
+
+
+
+        <!-- Agrega esto dentro del <header>, por ejemplo al lado de la fecha -->
+<div class="selector-tema">
+    <label for="temaSelect" style="font-size: 13px; color: white;">Tema:</label>
+    <select id="temaSelect" onchange="cambiarTema()" style="font-size: 13px; padding: 2px; border-radius: 4px;">
+        <option value="moderno">Moderno (Claro)</option>
+        <option value="oscuro">Modo Oscuro</option>
+        <option value="clasico">Original (Turquesa)</option>
+    </select>
+</div>
+
+
+
+
         <div>
             <span class="fecha">
               <p id="fecha"></p>
@@ -104,7 +121,7 @@
                           <tr><th>Envío</th><td><input type="number" id="envio" value="0"></td></tr>
                           <tr><th>Legalización</th><td><input type="number" id="legalizacion" value="0"></td></tr>
                           <tr>
-                            <th style="color: red; font-size: 20px;">TOTAL<p class="total" onclick="sumar()">pulsar</p></th>
+                            <th style="color: rgb(196, 22, 16); font-size: 20px;">TOTAL<p class="total" onclick="sumar()">pulsar</p></th>
                             <td><input type="number" id="total" readonly></td>
                           </tr>
                       </tbody>

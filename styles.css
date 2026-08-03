@@ -1,3 +1,4 @@
+/*
 * {
     margin: 0px;
     padding: 0px;
@@ -259,5 +260,403 @@ footer {
     .marca {
         font-size: 14px;
         margin-left: 20%;
+    }
+}
+    */
+    /* --- RESET GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================
+   TEMA 1: MODERNO CLARO (Por defecto)
+   ================================---------- */
+body.moderno {
+    background-color: #f4f6f9;
+    color: #333333;
+}
+body.moderno header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+body.moderno main {
+    background-color: transparent;
+}
+body.moderno #contacto, 
+body.moderno .motoAuto, 
+body.moderno .fieldset {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+body.moderno input[type="text"],
+body.moderno input[type="tel"],
+body.moderno input[type="number"],
+body.moderno select.contacto {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #333;
+}
+body.moderno .table input[type="number"] {
+    background-color: #f8f9fa;
+}
+
+
+/* ==========================================
+   TEMA 2: MODO OSCURO (Ideal para la noche)
+   ================================---------- */
+body.oscuro {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.oscuro header {
+    background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
+    border-bottom: 1px solid #333;
+}
+body.oscuro h4, body.oscuro .table th, body.oscuro #contacto label {
+    color: #b0b0b0;
+}
+body.oscuro th {
+    background-color: #585b5e;
+}
+body.oscuro td {
+    background-color: #585b5e;
+}
+body.oscuro #contacto, 
+body.oscuro .motoAuto, 
+body.oscuro .fieldset {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+body.oscuro input[type="text"],
+body.oscuro input[type="tel"],
+body.oscuro input[type="number"],
+body.oscuro select.contacto {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #ffffff;
+}
+body.oscuro input:focus, body.oscuro select:focus {
+    border-color: #4dabf7;
+    background-color: #333333;
+}
+body.oscuro .table tr {
+    border-bottom: 1px solid #2c2c2c;
+}
+body.oscuro .table input[type="number"] {
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 1px solid #444;
+}
+body.oscuro footer {
+    color: #777;
+    border-top: 1px solid #222;
+}
+
+
+/* ==========================================
+   TEMA 3: CLÁSICO / ORIGINAL (Turquesa)
+   ================================---------- */
+body.clasico {
+    background-color: rgb(160, 220, 220);
+    color: #000;
+}
+body.clasico header {
+    background-color: rgba(103, 103, 237, 0.945);
+}
+body.clasico main {
+    background-color: rgb(101, 211, 212);
+}
+body.clasico #contacto, 
+body.clasico .motoAuto, 
+body.clasico .fieldset {
+    background: transparent;
+    box-shadow: none;
+}
+body.clasico input[type="text"],
+body.clasico input[type="tel"],
+body.clasico input[type="number"],
+body.clasico select.contacto {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    color: #000;
+}
+body.clasico .table input[type="number"] {
+    background-color: rgb(160, 220, 220);
+    border: none;
+}
+
+
+/* --- ESTILOS GENERALES COMPARTIDOS --- */
+header {
+    padding: 20px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+#fecha {
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+main {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-style: italic;
+    text-align: center;
+}
+
+#contacto {
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contacto label {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="number"],
+select.contacto {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.15);
+}
+
+.obs {
+    text-transform: none !important;
+    resize: vertical;
+}
+
+.motoAuto {
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.check label {
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+}
+
+.fieldset {
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table tr {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.table th {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    padding: 8px 0;
+}
+
+.table input[type="number"] {
+    width: 110px;
+    padding: 6px;
+    font-size: 16px;
+    text-align: right;
+    border-radius: 6px;
+}
+
+.total {
+    font-size: 14px;
+    background-color: #d0d6db;
+    color: #1c7ed6;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+#total {
+    font-size: 20px;
+    color: #e03131;
+    font-weight: 700;
+}
+
+.col {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.boton {
+    background-color: #2a5298;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.boton:hover {
+    background-color: #1e3c72;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+/* --- DISEÑO PANTALLAS GRANDES (PC / NOTEBOOK) --- */
+@media (min-width: 992px) {
+    main {
+        max-width: 1400px;
+        display: grid;
+        /* Dividimos la pantalla en dos columnas iguales: Izquierda formulario, Derecha aranceles/totales */
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        padding: 0 40px;
+    }
+
+    header {
+        grid-column: span 2;
+    }
+
+    /* El título h4 (Gestoria Guille Ibarra) ocupa todo el ancho arriba */
+    h4 {
+        grid-column: span 2;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* El selector de Moto / Auto queda centrado arriba o entre medio */
+    .motoAuto {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto 20px auto;
+    }
+
+    /* Columna Izquierda: Los datos del cliente se expanden cómodamente */
+    #contacto {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Columna Derecha: La tabla de aranceles y el botón PDF se ubican al lado */
+    .col {
+        grid-column: 2;
+        grid-row: span 4;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fieldset {
+        width: 100%;
+        margin: 0;
+    }
+
+    .boton {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+/* --- RESPONSIVO --- */
+@media (min-width: 992px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+    header {
+        grid-column: span 2;
+    }
+    h4 {
+        grid-column: span 2;
+        margin-bottom: 0;
+    }
+    .motoAuto {
+        grid-column: span 2;
+        margin: 10px 0;
+    }
+    .col {
+        grid-column: span 2;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 }
